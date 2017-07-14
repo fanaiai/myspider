@@ -1,0 +1,98 @@
+2017-06-14 10:53:44 [scrapy.core.engine] ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "d:\Miniconda3\lib\site-packages\scrapy\core\engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "d:\Miniconda3\lib\site-packages\scrapy_splash\middleware.py", line 167, in process_start_requests
+    for req in start_requests:
+  File "D:\my\myspider\myspider\spiders\taobaospider.py", line 16, in start_requests
+    yield scrapy.Request(url,callback=self.parse_cate)
+  File "d:\Miniconda3\lib\site-packages\scrapy\http\request\__init__.py", line 25, in __init__
+    self._set_url(url)
+  File "d:\Miniconda3\lib\site-packages\scrapy\http\request\__init__.py", line 58, in _set_url
+    raise ValueError('Missing scheme in request url: %s' % self._url)
+ValueError: Missing scheme in request url: h
+2017-06-14 10:54:05 [scrapy.core.engine] ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "d:\Miniconda3\lib\site-packages\scrapy\core\engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "d:\Miniconda3\lib\site-packages\scrapy_splash\middleware.py", line 167, in process_start_requests
+    for req in start_requests:
+  File "D:\my\myspider\myspider\spiders\taobaospider.py", line 16, in start_requests
+    yield scrapy.Request(url,callback=self.parse_cate)
+  File "d:\Miniconda3\lib\site-packages\scrapy\http\request\__init__.py", line 25, in __init__
+    self._set_url(url)
+  File "d:\Miniconda3\lib\site-packages\scrapy\http\request\__init__.py", line 58, in _set_url
+    raise ValueError('Missing scheme in request url: %s' % self._url)
+ValueError: Missing scheme in request url: h
+2017-06-14 10:54:49 [scrapy.core.engine] ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "d:\Miniconda3\lib\site-packages\scrapy\core\engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "d:\Miniconda3\lib\site-packages\scrapy_splash\middleware.py", line 167, in process_start_requests
+    for req in start_requests:
+  File "D:\my\myspider\myspider\spiders\taobaospider.py", line 17, in start_requests
+    yield scrapy.Request(url,callback=self.parse_cate)
+  File "d:\Miniconda3\lib\site-packages\scrapy\http\request\__init__.py", line 25, in __init__
+    self._set_url(url)
+  File "d:\Miniconda3\lib\site-packages\scrapy\http\request\__init__.py", line 58, in _set_url
+    raise ValueError('Missing scheme in request url: %s' % self._url)
+ValueError: Missing scheme in request url: h
+2017-06-14 10:57:12 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: myspider)
+2017-06-14 10:57:12 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'myspider', 'HTTPCACHE_STORAGE': 'scrapy_splash.SplashAwareFSCacheStorage', 'LOG_FILE': 'logs.txt', 'MEMDEBUG_ENABLED': True, 'NEWSPIDER_MODULE': 'myspider.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['myspider.spiders']}
+2017-06-14 10:57:13 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memdebug.MemoryDebugger',
+ 'scrapy.extensions.logstats.LogStats']
+2017-06-14 10:57:13 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy_splash.SplashCookiesMiddleware',
+ 'scrapy_splash.SplashMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-06-14 10:57:13 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy_splash.SplashDeduplicateArgsMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-06-14 10:57:13 [scrapy.middleware] INFO: Enabled item pipelines:
+['myspider.pipelines.InsertMysql']
+2017-06-14 10:57:13 [scrapy.core.engine] INFO: Spider opened
+2017-06-14 10:57:13 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-06-14 10:57:13 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-06-14 10:57:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.taobao.com/robots.txt> (referer: None)
+2017-06-14 10:57:13 [scrapy.downloadermiddlewares.robotstxt] DEBUG: Forbidden by robots.txt: <GET https://www.taobao.com/tbhome/page/market-list?spm=a21bo.7925171.191431.2.jascIR>
+2017-06-14 10:57:13 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-06-14 10:57:13 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 1,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 1,
+ 'downloader/request_bytes': 222,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 502,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 6, 14, 2, 57, 13, 639764),
+ 'log_count/DEBUG': 3,
+ 'log_count/INFO': 7,
+ 'memdebug/gc_garbage_count': 0,
+ 'memdebug/live_refs/TaobaoSpider': 1,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2017, 6, 14, 2, 57, 13, 117865)}
+2017-06-14 10:57:13 [scrapy.core.engine] INFO: Spider closed (finished)
