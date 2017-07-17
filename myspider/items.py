@@ -37,6 +37,10 @@ class TaobaolistItem(scrapy.Item):
 	url=scrapy.Field()
 	name=scrapy.Field()
 
+class YihaoItem(scrapy.Item):
+	url=scrapy.Field()
+	name=scrapy.Field()
+
 class MyspiderItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
