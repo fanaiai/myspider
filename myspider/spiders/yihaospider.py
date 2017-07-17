@@ -18,11 +18,15 @@ class yihaoSpider(scrapy.Spider):
 	def parse_page(self,response):
 		totalPage=response.css("#lastPage::text").extract_first()
 		for i in range(1,int(totalPage)):
-			url='%s#page=%ssort=1' % (response.url,i)
-			yield scrapy.Request(url,callback=self.parse_list)
+			url='%s#page=%s&sort=1' % (response.url,i)
+			print('----------')
+			print(url)
+			yield scrapy.Request(url,callback=self.parse_list,dont_filter=True)
 
 	def parse_list(self,response):
 		alllists=response.css("#itemSearchList>div")
+		print("+++++++++++++++++++++++++++")
+		print(alllists)
 		for l in alllists:
 			print(l.css("::attr('id')").extract_first())
 

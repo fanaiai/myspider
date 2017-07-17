@@ -48,3 +48,8 @@ Temporary Items
 *.pyc
 *.pyc
 *.pyc
+myspider/__pycache__/settings.cpython-36.pyc
+myspider/__pycache__/items.cpython-36.pyc
+myspider/__pycache__/pipelines.cpython-36.pyc
+myspider/__pycache__/settings.cpython-36.pyc
+myspider/spiders/__pycache__/tbitemtest.cpython-36.pyc

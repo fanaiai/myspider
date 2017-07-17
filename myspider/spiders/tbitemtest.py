@@ -32,10 +32,6 @@ class TaobaoItem(scrapy.Spider):
 		# yield scrapy.Request(self.url[0],callback=self.parse_item,headers=self.headers,meta={'cookiejar': response.meta['cookiejar']})
 
 	def parse_item(self,response):
-<<<<<<< HEAD
 		print(response.body)
 		with open('tbitemtest.html','w',encoding="gbk") as f:
-=======
-		with open('tbitem.html','w',encoding="gbk") as f:
->>>>>>> 9d9dd9cb9f622ade6066bb6df122d8e4242e6982
 			f.write(response.body.decode("gbk"))
