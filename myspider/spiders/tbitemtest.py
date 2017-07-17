@@ -25,5 +25,5 @@ class TaobaoItem(scrapy.Spider):
 
 	def parse_item(self,response):
 		print(response.body)
-		with open('tbitemtest.html','wb') as f:
-			f.write(response.body)
+		with open('tbitemtest.html','w',encoding="gbk") as f:
+			f.write(response.body.decode("gbk"))
