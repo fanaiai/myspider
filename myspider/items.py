@@ -10,8 +10,6 @@ import re
 from scrapy.loader.processors import TakeFirst, MapCompose, Join
 
 def rstrip_str(value):
-	# print('+++++++++++++++++++++++++++++++++++++++++++')
-	# print(value.replace('\n','').rstrip().lstrip())
 	return str(value).replace('\n','').rstrip().lstrip()
 
 def getnum(value):
@@ -37,7 +35,7 @@ class TaobaolistItem(scrapy.Item):
 	url=scrapy.Field()
 	name=scrapy.Field()
 
-class YihaoItem(scrapy.Item):
+class YihaoList(scrapy.Item):
 	url=scrapy.Field()
 	name=scrapy.Field()
 
@@ -67,6 +65,27 @@ class JiadianItem(scrapy.Item):
 	badcommentnum=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
 	comment_tags=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
 class JdItem(scrapy.Item):
+	id=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	name=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	url=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	price=scrapy.Field(input_processor=MapCompose(rstrip_str,getnum),output_processor=Join1())
+	brand=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	parameter=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	images=scrapy.Field()
+	images_url=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	summary_service=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	sales_promotion=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	add_service=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	store=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	store_link=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	goodcomments=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	commentsnum=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	goodcommentnum=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	mediumcommentnum=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	badcommentnum=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+	comment_tags=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
+
+class YihaoItem(scrapy.Item):
 	id=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
 	name=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
 	url=scrapy.Field(input_processor=MapCompose(rstrip_str),output_processor=Join1())
