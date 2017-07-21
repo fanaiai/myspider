@@ -81,7 +81,7 @@ class yihaoSpider(scrapy.Spider):
 		item.add_value('badcommentnum','无')
 		item.add_value('mediumcommentnum','无')
 		item.add_value('store','无')
-		yield item.load_item()
+		yield SplashRequest(url,callback=self.parse_item,args={'url':url,'wait':2.5},dont_filter=True)
 
 	def parse_cats(self,response):
 		allsorts=response.css(".alonesort .mc em a");
