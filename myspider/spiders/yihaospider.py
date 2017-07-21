@@ -37,13 +37,26 @@ class yihaoSpider(scrapy.Spider):
 			yield SplashRequest(url,callback=self.parse_list,args={'lua_source':splashjs,'url':url,'wait':2.5},dont_filter=True,endpoint='execute')
 
 	def parse_list(self,response):
+		splashjs="""
+		function main(splash)
+		  local url = splash.args.url
+		  assert(splash:go(url))
+		  assert(splash:wait(2.5))
+		  local scroll_to = splash:jsfunc("window.scrollTo")
+		   scroll_to(0, 30000)
+		  assert(splash:wait(3.5))
+		  return {
+		    html = splash:html(),
+		  }
+		end
+		"""
 		alllists=response.css("#itemSearchList>div .proName>a")
 		print("+++++++++++++++++++++++++++")
 		for l in alllists:
 			url=l.css("::attr('href')").extract_first()
 			if(re.search('item',url)):
 				url=response.urljoin(url)
-				yield SplashRequest(url,callback=self.parse_item,args={'url':url,'wait':2.5},dont_filter=True)
+				yield SplashRequest(url,callback=self.parse_item,args={'lua_source':splashjs,'url':url,'wait':2.5},dont_filter=True,endpoint='execute')
 
 
 	def parse_item(self,response):
